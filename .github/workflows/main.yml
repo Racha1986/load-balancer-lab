@@ -1,7 +1,8 @@
-id=“44821”}
+riting{variant=“standard” id=“61842”}
+cat > .github/workflows/main.yml << ‘EOF’
 name: Auto Deploy
 
-“on”:
+on:
 push:
 branches:
 - main
