@@ -1,7 +1,7 @@
-ant=“standard” id=“55281”}
+id=“44821”}
 name: Auto Deploy
 
-on:
+“on”:
 push:
 branches:
 - main
