@@ -1,4 +1,4 @@
-name: My First Pipeline
+name: Auto Deploy
 
 on:
    push:
@@ -10,5 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show Message
-        run: echo "Hello GitHub Actions!"
+      - name: SSH Deploy
+        users: appleboy/ssh-action@master
+        with:
+          host: 192.168.1.43
+          username: racha
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+             cd /home/racha/load-balancer-lab
+             docker-compose down
+             docker-compose up -d
